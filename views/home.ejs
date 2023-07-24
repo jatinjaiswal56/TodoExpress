@@ -1,0 +1,35 @@
+<html lang="en">
+  <head>
+    <title><%=title%></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/home.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="to-docontainer">
+        <h2>To Do List</h2>
+        <!-- container for the input and add button -->
+        <div class="add-input">
+          <input type="text" id="input-box" placeholder="Add Your Task" />
+          <!-- this add handler will add the new tasks -->
+          <button onclick="addhandler()">ADD</button>
+        </div>
+        <!-- List for the tasks which user will add -->
+        <ul id="list-container">
+          <!-- here list will be added by the user and will be shown usinh js -->
+          <!-- <li class="checked">Task1</li> -->
+          <% for(let i of List){%>
+          <li>
+            <p><%=i.task%></p>
+            <span onclick="deleteHandler('<%= i._id %>')">X</span>
+          </li>
+          <%}%>
+        </ul>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="/js/home.js"></script>
+  </body>
+</html>
