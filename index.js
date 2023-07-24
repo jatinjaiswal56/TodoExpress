@@ -51,15 +51,7 @@ app.post("/create-task", function (req, res) {
   
   
   
-  //   List.create({
-  //     name: req.body.name,
-  //     phone: req.body.name
-  // }, function(err, newList){
-  //     if(err){console.log('Error in creating a contact!')
-  //         return;}
-  //         console.log('******', newList);
-  //         return res.redirect('back');
-  // })
+ 
   List.create({ task: req.body.task}) 
     .then(() => {
       
